@@ -1,11 +1,9 @@
 package com.zipcodewilmington.phonebook;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.lang.reflect.Array;
+import java.util.*;
 //import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+
 
 /**
  * Created by leon on 1/23/18.
@@ -14,6 +12,7 @@ import java.util.Map;
 public class PhoneBook {
 
     private final Map<String, List<String>> phonebook;
+    ArrayList < String> phoneList = new ArrayList<>();
 
     public PhoneBook(Map<String, List<String>> map) {
 
@@ -22,15 +21,15 @@ public class PhoneBook {
 
     public PhoneBook() {
 
-        this.phonebook=
-        this(null);
+        this.phonebook= new LinkedHashMap<>();
+
     }
 
     // adds an entry to the composite associate data type
     public void add(String name, String phoneNumber) {
-        list.add (phoneNumber);
-        map.put(name,Array.asList (phonenumber));
 
+        phonebook.put(name, Arrays.asList(phoneNumber));
+        phoneList.add(phoneNumber);
     }
 
     // adds many phone numbers to a single name entry
