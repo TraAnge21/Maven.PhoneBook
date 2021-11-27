@@ -10,20 +10,22 @@ import java.util.*;
  * Made WAY better by kristofer 6/16/20
  */
 public class PhoneBook {
-
-    private final Map<String, List<String>> phonebook;
-    ArrayList < String> phoneList = new ArrayList<>();
-
-    public PhoneBook(Map<String, List<String>> map) {
-
-        this.phonebook = new phonebook;
-    }
+//    final
+    private Map<String, List<String>> phonebook;
+    List < String> phoneList = new ArrayList<>();
 
     public PhoneBook() {
 
-        this.phonebook= new LinkedHashMap<>();
+        this.phonebook= new HashMap<>();
 
     }
+
+    public PhoneBook(Map<String, List<String>> map) {
+
+        this.phonebook= new phonebook();
+    }
+
+
 
     // adds an entry to the composite associate data type
     public void add(String name, String phoneNumber) {
@@ -34,33 +36,42 @@ public class PhoneBook {
 
     // adds many phone numbers to a single name entry
     public void addAll(String name, String... phoneNumbers) {
-
+        phonebook.put(name, Arrays.asList(phoneNumbers));
     }
 
     // removes an entry to the composite associate data type
     public void remove(String name) {
+        phonebook.remove(name);
 
     }
 
-    // removes an entry to the composite associate data type
+    // check if the hasmap has a specific name or entry/key
     public Boolean hasEntry(String name) {
-
-        return null;
+       if (phonebook.containsKey(name)) {
+           return true;
+       }
+        return false;
     }
 
 
     // returns a phone number for the respective input name
     public List<String> lookup(String name) {
-
-        return null;
+        return  phonebook.get(name);
     }
 
 
     // returns a name for the respective input phoneNumber
-    public String reverseLookup(String phoneNumber)  {
+    public String reverseLookup(String phoneNumber) {
 
-        return null;
-    }
+//        for (String name : phonebook.keySet()) {
+//            if (phoneNumber.equals(phonebook.get(name))) {
+//                return name;
+//            }
+//        }
+//        return null;
+//    }
+
+
 
     // returns a list of all names in this PhoneBook
     public List<String> getAllContactNames() {
