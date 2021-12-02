@@ -72,15 +72,15 @@ public class PhoneBook {
 
     // returns a phone number for the respective input name
     public List<String> lookup(String name) {
-        return  map.get(name);
+        return  phoneBook.get(name);
     }
 
 
     // returns a name for the respective input phoneNumber
     public String reverseLookup(String phoneNumber) {
 
-//        for (String name : phonebook.keySet()) {
-//            if (phoneNumber.equals(phonebook.get(name))) {
+//        for (String name : phoneBook.keySet()) {
+//            if (phoneNumber.equals(phoneBook.get(name))) {
 //                return name;
 //            }
 //        }
@@ -88,7 +88,7 @@ public class PhoneBook {
 //    }
 
         String key = "";
-        for (Map.Entry <String, List<String>> entry : map.entrySet()) {
+        for (Map.Entry <String, List<String>> entry : phoneBook.entrySet()) {
             key = entry.getKey();
         }
         return key;
@@ -98,8 +98,8 @@ public class PhoneBook {
 
     // returns a list of all names in this PhoneBook
     public List<String> getAllContactNames() {
-
-        return null;
+        List < String> result = new ArrayList<>(phoneBook.keySet());r
+        return result;
     }
 
 
