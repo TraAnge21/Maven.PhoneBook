@@ -98,13 +98,13 @@ public class PhoneBook {
 
     // returns a list of all names in this PhoneBook
     public List<String> getAllContactNames() {
-        List < String> result = new ArrayList<>(phoneBook.keySet());r
+        List < String> result = new ArrayList<>(phoneBook.keySet());
         return result;
     }
 
 
     public Map<String, List<String>> getMap() {
 
-        return null;
+        return phoneBook;
     }
 }
