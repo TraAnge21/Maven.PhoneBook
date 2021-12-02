@@ -31,28 +31,39 @@ public class PhoneBook {
 
     // adds an entry to the composite associate data type
     public void add(String name, String phoneNumber) {
+        List < String> phoneList=phoneBook.get(name);
+        phoneBook.put(name, phoneList);
+//        map.put(name, Arrays.asList(phoneNumber));
+//        phoneList.add(phoneNumber);
+//        Map<String, List<Item>> items = new HashMap<>();
+//        items.computeIfAbsent(key, k -> new ArrayList<>()).add(item);
 
-        map.put(name, Arrays.asList(phoneNumber));
-        phoneList.add(phoneNumber);
+        phoneBook.computeIfAbsent(name, k -> new ArrayList<>()).add(phoneNumber);
     }
+
+
 
 
     // adds many phone numbers to a single name entry
     public void addAll(String name, String... phoneNumbers) {
-        map.put(name, Arrays.asList(phoneNumbers));
-    }
 
+        List < String> phoneNumbs = new ArrayList<String>(Arrays.asList(phoneNumbers));
+//        numbers.add(phoneNumbers);
+        phoneBook.put(name, phoneNumbs);
+
+
+    }
 
     // removes an entry to the composite associate data type
     public void remove(String name) {
-        map.remove(name);
+        phoneBook.remove(name);
 
     }
 
 
     // check if the hashmap has a specific name or entry/key
     public Boolean hasEntry(String name) {
-       if (map.containsKey(name)) {
+       if (phoneBook.containsKey(name)) {
            return true;
        }
         return false;
