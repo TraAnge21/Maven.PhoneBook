@@ -12,19 +12,19 @@ import java.util.*;
 
 public class PhoneBook {
 //    final
-    private Map<String, List<String>> map;
-    List < String> phoneList = new ArrayList<>();
+    private Map<String, List<String>> phoneBook;
+//    List < String> phoneList = new ArrayList<>();
 
     public PhoneBook() {
 
-        this.map= new LinkedHashMap<>();
+        this.phoneBook= new LinkedHashMap<>();
 
     }
 
     public PhoneBook(Map<String, List<String>> map) {
 
 //        this.phonebook= new phonebook();
-        this.map =map;
+        this.phoneBook =map;
     }
 
 
